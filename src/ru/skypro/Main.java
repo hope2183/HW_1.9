@@ -17,22 +17,36 @@ public class Main {
             System.out.println(skazkaOTsareSaltane.toString());
 
             // MIDDLE
-
-            Author ekkel = new Author("Bruce", "Ekkel");
+        System.out.println("//MIDDLE");
+                        Author ekkel = new Author("Bruce", "Ekkel");
             Book[] books = new Book[5];
-            addBook (books, new Book(ekkel, "Thinking in Java", 2017));
+            addBook (books,new Book(ekkel, "Thinking in Java", 2017));
             addBook (books, new Book(ekkel, "Using C++", 1989));
             addBook (books, new Book(ekkel, "Atomic Kotlin", 2021));
 
             for (Book book : books) {
                 if (book != null) {
                     printBook(book);
-
                 }
 
             }
+//        // HARD
+        System.out.println("//HARD");
+        LIBRARY library = new LIBRARY(5);
+        //Author ekkel = new Author("Bruce", "Ekkel");
+        Author king = new Author("Stephen", "King");
 
-        }
+        library.addBook(new Book(ekkel, "Thinking in Java", 2017));
+        library.addBook (new Book(ekkel, "Using C++", 1989));
+        library.addBook (new Book(ekkel, "Atomic Kotlin", 2021));
+        library.addBook(new Book(king, "The Stand", 1978));
+
+        library.printBookInfo("The Stand");
+        library.changeBookEdition("The Stand",2020);
+        library.printBookInfo("The Stand");
+
+    }
+
         private static boolean addBook(Book[] books, Book newBook){
             for (int i = 0; i < books.length; i++) {
                 if (books[i]==null) {
